@@ -1,0 +1,63 @@
+﻿// Показать последнюю цифру трёхзначного числа
+
+// Console.WriteLine("Введите числа в диапазоне: ");
+// int number = new Random().Next(100, 1000);
+// Console.Write($"последняя цифра числа {number} ");
+// int a = number % 10;
+// Console.Write($"равна {a}");
+
+
+// Дано число из отрезка [10, 99]. Показать наибольшую цифру числа
+
+// int number = new Random().Next(10, 100);
+// int number2 = number % 10;
+// int number1 = number / 10;
+
+// int max = number1;
+
+// if (number1 < number2)
+// {
+//     max = number2;
+// }
+
+// Console.WriteLine($"максимальная цифра числа {number} является {max}");
+
+
+
+//Задача 12. Удалить вторую цифру трёхзначного числа
+
+// Console.WriteLine("Введите трехначное число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+
+// if (number < 999 && number > 100)
+// {
+//     int digit1 = number / 100;
+//     int digit2 = number % 10;
+//     int newNumber = digit1 * 10 + digit2;
+//     Console.WriteLine(newNumber);
+// }
+// else
+// {
+//     Console.WriteLine("Вы ввели не трёхзначное число!!!");
+// }
+
+
+// Является ли первое число квадратом второго (через функцию)
+
+bool isSquare(int number1, int number2){
+    return number1 == number2 * number2; 
+}
+
+Console.WriteLine("Введите число: ");
+int number1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число: ");
+int number2 = Convert.ToInt32(Console.ReadLine());
+
+if (isSquare(number1, number2))
+{
+    Console.WriteLine($"Число {number1} является квадратом числа {number2}");
+}
+else
+{
+    Console.WriteLine($"Число {number1} не является квадратом числа {number2}");
+}
