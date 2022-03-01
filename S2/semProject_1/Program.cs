@@ -85,29 +85,81 @@
 // }
 
 
+// //Задача 14. Найти третью цифру числа или сообщить, что её нет (через строку с использованием корня от квадрата введённого числа)
 
-//Задача 16. Дано число обозначающее день недели. Выяснить является номер дня недели выходным
+// Console.WriteLine("Введите число: ");
+// long digit = Convert.ToInt64(Console.ReadLine());
 
-void weekend (int number)
+// long newDigit = digit * digit;
+// string digitString = Convert.ToString(Math.Sqrt(newDigit));
+
+// Console.WriteLine(newDigit);
+
+// if (digitString.Length > 2)
+// {
+//     Console.WriteLine(digitString[2]);
+// }
+// else
+// {
+//     Console.WriteLine($"В числе {digit} нет третьей цифры");
+// }
+
+
+
+//Задача 14. Найти третью цифру числа или сообщить, что её нет (с изменением отрицательного числа)
+
+Console.WriteLine("Введите число: ");
+int digit = Convert.ToInt32(Console.ReadLine());
+int newDigit = digit;
+if (digit < 0)
 {
-    if (number > 5)
-    {
-        Console.WriteLine("Выходной");
-    }
-    else
-    {
-        Console.WriteLine("Работать!!!");
-    }
+    newDigit = digit * -1;
 }
 
-Console.WriteLine("Введите номер дня недели: ");
-int dayNumber = Convert.ToInt32(Console.ReadLine());
+string digitString = Convert.ToString(newDigit);
 
-if (dayNumber <= 7 & dayNumber >= 1)
+if (digitString.Length > 2)
 {
-    weekend(dayNumber);
+    Console.WriteLine(digitString[2]);
 }
 else
 {
-    Console.WriteLine("Вы ввели неверное число!");
+    Console.WriteLine($"В числе {digit} нет третьей цифры");
 }
+
+
+
+
+// Нахождение и удаление символа по индексу
+// {
+//     string newDigit = digit.Remove(digit.IndexOf("-"), 1);
+// }
+
+
+
+
+// //Задача 16. Дано число обозначающее день недели. Выяснить является номер дня недели выходным
+
+// void weekend (int number)
+// {
+//     if (number > 5)
+//     {
+//         Console.WriteLine("Выходной");
+//     }
+//     else
+//     {
+//         Console.WriteLine("Работать!!!");
+//     }
+// }
+
+// Console.WriteLine("Введите номер дня недели: ");
+// int dayNumber = Convert.ToInt32(Console.ReadLine());
+
+// if (dayNumber <= 7 & dayNumber >= 1)
+// {
+//     weekend(dayNumber);
+// }
+// else
+// {
+//     Console.WriteLine("Вы ввели неверное число!");
+// }
