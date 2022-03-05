@@ -19,7 +19,5 @@ Math.Sqrt((numberX2-numberX1)*(numberX2-numberX1) +
           (numberY2-numberY1)*(numberY2-numberY1) +
           (numberZ2-numberZ1)*(numberZ2-numberZ1));
 
-Console.WriteLine(@$"Расстояние между точками (
-                    X1: {numberX1} , Y1: {numberY1} , Z1: {numberZ1}) и (
-                    X2: {numberX2} , Y2: {numberY2} , Z2: {numberZ2}) 
-                    составляет: {result:f3}");
+Console.WriteLine(@$"Расстояние между точками [X1: {numberX1}, Y1: {numberY1}, Z1: {numberZ1}] и [X2: {numberX2}, Y2: {numberY2}, Z2: {numberZ2}]
+составляет: {result:f3}");
