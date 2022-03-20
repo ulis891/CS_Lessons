@@ -98,11 +98,11 @@
 
 // if (polidrome)
 // {
-//     Console.WriteLine($"Число {number} являеться полидромом");
+//     Console.WriteLine($"Число {number} являеться палиндромом");
 // }
 // else
 // {
-//     Console.WriteLine($"Число {number} не являеться полидромом");
+//     Console.WriteLine($"Число {number} не являеться палиндромом");
 // }
 
 
