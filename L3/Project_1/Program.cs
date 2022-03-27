@@ -19,7 +19,7 @@ void Sort (int [] array)
     {
         int maxPosition = i;
 
-        for (int j = i + 1; j < array.Length; j++)пше
+        for (int j = i + 1; j < array.Length; j++)
         {
             if (array[j] > array[maxPosition]) maxPosition = j;
         }
