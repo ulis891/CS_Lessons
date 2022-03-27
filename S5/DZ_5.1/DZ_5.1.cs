@@ -11,7 +11,7 @@ void NewMassive(int[] array)
     while (index < len)
     {
         array[index] = new Random().Next(100, 1000);
-        Console.WriteLine(arr[index]);
+        Console.WriteLine(array[index]);
         index++;
     }
 }
