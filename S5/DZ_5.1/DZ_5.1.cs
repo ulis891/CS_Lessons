@@ -30,6 +30,7 @@ void EvenCount (int[] array)
     if (count == 0)
     {
         Console.WriteLine($"В массиве нет чётных чисел");
+        return;
     }
     if (count % 10 == 1 & count != 11)
     {
