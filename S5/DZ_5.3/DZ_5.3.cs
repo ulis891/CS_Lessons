@@ -7,7 +7,7 @@ Console.WriteLine();
 double[] arr = new double [arrLen];
 int len = arr.Length;
 
-void NewMassive(double[] array)
+void NewDoubleMassive(double[] array)
 {
     int index =  0;
     while (index < len)
@@ -39,7 +39,7 @@ void MinMax (double[] array)
     Console.WriteLine($"Разница между максимальным ({array[MaxIndex]:f3}) и минимальным ({array[MinIndex]:f3}) значением в массиве равняется: {result:f3}");
 }
 
-NewMassive(arr);
+NewDoubleMassive(arr);
 Console.WriteLine();
 MinMax(arr);
 Console.WriteLine();
