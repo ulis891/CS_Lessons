@@ -24,7 +24,6 @@ if (colums1 != rows2)
 
 int[,] table1 = new int[rows1, colums1];
 int[,] table2 = new int[rows2, colums2];
-int[,] result = new int[rows1, colums2];
 
 void FillArray(int[,] matr)
 {
