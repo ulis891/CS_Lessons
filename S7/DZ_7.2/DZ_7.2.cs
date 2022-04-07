@@ -11,7 +11,7 @@ int[,] table = new int [rows, colums];
 
 void FillArray (int [,] matr)
 {
-    for (int i = 0; i < matr.GetLength(0); i++)  //
+    for (int i = 0; i < matr.GetLength(0); i++) 
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
@@ -22,7 +22,7 @@ void FillArray (int [,] matr)
 
 void SquareOddIndex (int[,] matr)
 {
-    for (int i = 0; i < matr.GetLength(0); i++)  //
+    for (int i = 0; i < matr.GetLength(0); i++) 
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
