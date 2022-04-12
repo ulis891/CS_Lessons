@@ -2,160 +2,47 @@
 
 
 Console.WriteLine();
-Console.WriteLine("Сколько строк будет в массиве?");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine();
-Console.WriteLine("Сколько столбцов будет в массиве?");
-int colums = Convert.ToInt32(Console.ReadLine());
-int[,] table = new int[rows, colums];
-int num = 1;
-int iIndex = 0;
-int jIndex = 0;
-int saveColumsIndex;
-int saveRowIndex;
-
-
-void Spiral(int[,] matr)
+int rows;
+Console.WriteLine("Сколько строк и столбцов будет в массиве?");
+Console.WriteLine("нажмите Enter для создания массива 4 на 4!");
+string input = Console.ReadLine();
+if (input == string.Empty)
 {
-    if (num < matr.GetLength(0) * matr.GetLength(1))
-    {
-        int saveColumsIndex = 0;
-        int j = jIndex;
-        for (int i = j; i < matr.GetLength(1); i++)
-        {
-            matr[j, i] = num;
-            num++;
-            jIndex = i;
-        }
-        for (int i = matr.GetLength(0) - jIndex; i < matr.GetLength(0); i++)
-        {
-            matr[i, jIndex] = num;
-            num++;
-            saveColumsIndex = i;
-        }
-        jIndex = saveColumsIndex;
-        for (int i = jIndex-1; i >= matr.GetLength(1) - jIndex-1; i--)
-        {
-            matr[jIndex, i] = num;
-            num++;
-            saveColumsIndex = i;
-        }
-        jIndex = saveColumsIndex;
-        for (int i = jIndex; i > matr.GetLength(1); i--)
-        {
-            matr[i, jIndex] = num;
-            num++;
-            saveColumsIndex = i;
-        }
-        jIndex = saveColumsIndex;
-    }
+    rows = 4;
+}
+else
+{
+    rows = Convert.ToInt32(input);
 }
 
-
-
-
-
-// void FillArray(int[,] matr)
-// {
-//     int num = 1;
-//     int saveRowIndex = 0;
-//     int saveColumsIndex = 0;
-
-//     for (int i; i < matr.GetLength(1); i++)
-//     {
-//         matr[i, j] = num;
-//         num++;
-//         saveRowIndex = i;
-//         saveColumsIndex = j;
-//     }
-
-// }
-
-// void MoveRight(int[,] matr, int iPosition, int jPosition)
-// {
-//     for (int i = iPosition; i < matr.GetLength(1); i++)
-//     {
-//         if (num < matr.GetLength(0) * matr.GetLength(1))
-//         {
-//             int j = jPosition;
-//             matr[j, i] = num;
-//             num++;
-//             saveRowIndex = i;
-//             saveColumsIndex = j;
-//         }
-//         else
-//         {
-//             break;
-//         }
-//         MoveDown(matr, saveRowIndex, saveColumsIndex);
-//     }
-
-
-
-// }
-
-// void MoveDown(int[,] matr, int iPosition, int JPosition)
-// {
-//     for (int i = iPosition; i < matr.GetLength(1); i++)
-//     {
-//         if (num < matr.GetLength(0) * matr.GetLength(1))
-//         {
-//             int j = jPosition;
-//             matr[i, j] = num;
-//             num++;
-//             saveRowIndex = i;
-//             saveColumsIndex = j;
-//         }
-//         else
-//         {
-//             break;
-//         }
-//         // MoveDown(matr, saveRowIndex, saveColumsIndex);
-//     }
-// }
-
-// // void MoveLeft(int[,] matr, int iPosition, int JPosition)
-// // {
-// //     for (int i; i < matr.GetLength(1); i++)
-// //     {
-// //         matr[i, j] = num;
-// //         num++;
-// //         saveRowIndex = i;
-// //         saveColumsIndex = j;
-// //     }
-// // }
-
-// // // void MoveUp(int[,] matr, int iPosition, int JPosition)
-// // {
-// //     for (int i; i < matr.GetLength(1); i++)
-// //     {
-// //         matr[i, j] = num;
-// //         num++;
-// //         saveRowIndex = i;
-// //         saveColumsIndex = j;
-// //     }
-// // }
-
-
-// for (int i = 0; i < length; i++)
-// {
-//     for (int j = 0; j < length; j++)
-//     {
-//         if (matr[i, j] == 0 & j < matr.GetLength(1))
-//         {
-//             matr[i, j] = num;
-//             num++;
-//             jIndex = j;
-//         }
-//     }
-//     for (int j = jIndex; j < length; j++)
-//     {
-
-//     }
-// }
-
-
-
+int[,] FillArraySpiral(int n)
+{
+    int number = 1;
+    int[,] array = new int[n, n];
+    int count = 0;
+    int row; int column;
+    while (number <= n * n)
+    {
+        for (column = count; column < n - count; column++)
+        {
+            array[count, column] = number++;
+        }
+        for (row = count + 1; row < n - count; row++)
+        {
+            array[row, n - count - 1] = number++;
+        }
+        for (column = n - count - 2; column > count; column--)
+        {
+            array[n - count - 1, column] = number++;
+        }
+        for (row = n - count - 1; row > count; row--)
+        {
+            array[row, count] = number++;
+        }
+        count++;
+    }
+    return array;
+}
 
 void PrintArray(int[,] matr)
 {
@@ -173,7 +60,5 @@ void PrintArray(int[,] matr)
     Console.WriteLine();
 }
 
-Spiral(table);
 Console.WriteLine();
-Console.WriteLine("Изначальный массив:");
-PrintArray(table);
+PrintArray(FillArraySpiral(rows));
