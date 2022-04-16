@@ -8,13 +8,20 @@ int b = Convert.ToInt32(Console.ReadLine());
 int sum = 0;
 
 int SumNumbers(int x, int y)
-{  
-    if (y >= x)
+{
+    if (y > x)
     {
         sum += y;
         SumNumbers(x, y - 1);
+        return sum + x;
     }
-    return sum;
+    else if (x > y)
+    {
+        sum += x;
+        SumNumbers(x - 1, y);
+        return sum + y;
+    }
+    return 0;
 }
 
 Console.WriteLine(SumNumbers(a, b));
