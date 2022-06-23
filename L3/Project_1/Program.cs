@@ -1,4 +1,5 @@
-﻿//сортировка от большего к мньшему в заданном массиве
+﻿
+//сортировка от большего к мньшему в заданном массиве
 
 int [] arr = {1,1,23,53,4,23,1,7,65,3,47,34,77,3};
 
@@ -29,6 +30,9 @@ void Sort (int [] array)
     }
 }
 
+
 PrintArray(array: arr);
+Array.Sort(arr);
+PrintArray(arr);
 Sort(arr);
 PrintArray(arr);

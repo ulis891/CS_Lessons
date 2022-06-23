@@ -8,9 +8,6 @@
 
 int a = 6;
 int b = 25;
-if (b == a*a)
-{
-    Console.WriteLine("fafdf");
-}
+if (b == a*a) Console.WriteLine(".......");
 
 else Console.WriteLine(".......");
